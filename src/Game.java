@@ -6,6 +6,9 @@ public class Game extends StateBasedGame
 	public static final String gamename = "Legend Of Final Project";
 	public static final int menu = 0;
 	public static final int play = 1;
+	public static final int credits = 2;
+	public static final int config = 3;
+	public static final int pause = 4;
 	public static final int HEIGHT = 480;
 	public static final int WIDTH = 640;
 	public static final int TILE_SIZE = 16;
@@ -21,6 +24,8 @@ public class Game extends StateBasedGame
 		super(gamename);
 		this.addState(new Menu(menu));
 		this.addState(new Play(play));
+		this.addState(new Credits(credits));
+		this.addState(new Pause(pause));
 	}
 	
 	/**
@@ -33,6 +38,9 @@ public class Game extends StateBasedGame
 	{
 		this.getState(menu).init(gc, this);
 		this.getState(play).init(gc, this);
+		this.enterState(menu);
+		this.getState(credits).init(gc, this);
+		this.getState(pause).init(gc, this);
 		this.enterState(menu);
 	}
 	
