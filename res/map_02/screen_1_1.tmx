@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.4" orientation="orthogonal" renderorder="right-down" width="40" height="30" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="1">
+ <tileset firstgid="1" source="test_2.tsx"/>
+ <layer id="1" name="ground" width="40" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACu2UwQ0AIAjETofFbXRlHcEoj9P00S9pCqFIKslElVrNn5tFX27D2I9+9KPfu/0G/a7g/v7u5+7Hfv/u5+7nvl/87v3C3M+9H37nuP8/gF0mD4gr3cASAAA=
+  </data>
+ </layer>
+ <layer id="2" name="passable" width="40" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACu3BMQEAAADCoPVPbQ0PoAAAAADg1wAW4j6/wBIAAA==
+  </data>
+ </layer>
+ <layer id="3" name="impassable" width="40" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACu2TYQ6DMAiFqQfcbjNvoLfZrqh/muALQo11vkS+xNRChQdFkfuYBpF5uFFAwHfV9iPWh2Q/j5H9Sphgm0fUwzaPbHqSa2D7L5Ccw+fAMIueBoZZ7K3hTM973tdeLKve1rwtvcJYR3ScydsKxmKYQQZeReRdYtu/9dT1sz5j2fq0zfo2im2d9fb6vea2/JZWzZ5uy49nvT36am70e3V4vdG2XivqwTqwp1692tZrje4rukvNAvAbjZfAEgAA
+  </data>
+ </layer>
+</map>
