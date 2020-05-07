@@ -11,7 +11,7 @@ public class Play extends BasicGameState
 {
 	boolean quit = false;
 	
-	boolean drawBox = true;		// option to show hitboxes for debugging purposes
+	boolean drawBox = false;		// option to show hitboxes for debugging purposes
 	
 	// Start in upper left screen in 2d screens array
 	int row = 0;
@@ -23,6 +23,8 @@ public class Play extends BasicGameState
 	Screen[][] screens = new Screen[2][2];	// Create a 2d array of Screen objects
 	Screen currentScreen;
 	TiledMap map;
+	
+	static Input input;
 	
 	CopyOnWriteArrayList<SubMonster> monsterList;		// CopyOnWriteArrayList to hold monsters on current screen
 	Rectangle[] worldCollisions;						// holds collision rectangles for current screen
@@ -101,8 +103,10 @@ public class Play extends BasicGameState
 		player.playerAnim.draw(player.getX(), player.getY());
 		
 		// draw debugging info
+		/*
 		g.drawString("Player X: " + player.getX() + "\nPlayer Y: " + player.getY(), 100, 50);
 		g.drawString("Mouse X: " + Controls.getMouseX(gc) + " Mouse Y: " + Controls.getMouseY(gc), 300, 50);
+		*/
 		if (drawBox)
 		{
 			g.draw(player.getBox() );
@@ -130,7 +134,14 @@ public class Play extends BasicGameState
 	{		
 		// Run the Players update method
 		player.update(delta, gc, worldCollisions);
-
+		
+		input = gc.getInput();
+		
+		if(input.isKeyDown(Input.KEY_ESCAPE))
+		{
+			gc.pause();
+			sbg.enterState(4);
+		}
 		
 		// Check if the player is at the edge of the screen
 		if (player.getY() > 450 && row < 1)							// If at the bottom of currentScreen
